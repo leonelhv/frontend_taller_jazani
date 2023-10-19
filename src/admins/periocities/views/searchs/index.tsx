@@ -13,8 +13,8 @@ const index = (): JSX.Element => {
   const [periocities, setPeriocities] = useState<PeriocityResponse[]>()
 
   useEffect(() => {
-    findAll().then(({ data }) => {
-      setPeriocities(data)
+    findAll().then((response) => {
+      setPeriocities(response)
     }).catch((error) => {
       console.log(error)
     })
@@ -38,14 +38,14 @@ const index = (): JSX.Element => {
                 </thead>
                 <tbody>
                   {
-                    periocities?.map(mineralType => (
-                      <tr key={mineralType.id}>
-                        <td>{mineralType.id}</td>
-                        <td>{mineralType.name}</td>
-                        <td>{mineralType.description}</td>
+                    periocities?.map(periocity => (
+                      <tr key={periocity.id}>
+                        <td>{periocity.id}</td>
+                        <td>{periocity.name}</td>
+                        <td>{periocity.description}</td>
                         <td>
-                          <Badge pill bg={mineralType.state ? 'success' : 'danger'}>
-                            {mineralType.state ? 'Activo' : 'Eliminado'}
+                          <Badge pill bg={periocity.state ? 'success' : 'danger'}>
+                            {periocity.state ? 'Activo' : 'Eliminado'}
                           </Badge>
                         </td>
                       </tr>

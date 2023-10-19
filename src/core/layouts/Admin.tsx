@@ -2,7 +2,7 @@ import Container from "react-bootstrap/Container"
 import { Menu } from "./components/Menu"
 import { Outlet } from "react-router-dom"
 
-export const Admin = (): JSX.Element => {
+const Admin = (): JSX.Element => {
   return (
     <>
       <Menu />
@@ -12,3 +12,5 @@ export const Admin = (): JSX.Element => {
     </>
   )
 }
+
+export default Admin
