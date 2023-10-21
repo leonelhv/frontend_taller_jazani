@@ -44,9 +44,7 @@ const index = (): JSX.Element => {
 
     LocalStorageSession.saveAuthorization(response);
 
-    const isValidAuth = LocalStorageSession.isValidAuthorization();
-
-    if (isValidAuth) navigate('/periocities');
+    navigate('/periocities');
 
   };
 

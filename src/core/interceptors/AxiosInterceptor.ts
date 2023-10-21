@@ -21,6 +21,7 @@ const AxiosInterceptor = (): void => {
         config.headers.set('Authorization', `${security.tokenType} ${security.accesTocken}`);
 			}
 			console.log('Interceptor');
+      console.log(config.headers);
 			return config;
 		},
 		async error => await Promise.reject(error),
